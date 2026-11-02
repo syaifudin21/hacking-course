@@ -81,6 +81,24 @@ function openLesson(id) {
   }
 }
 document.getElementById('backToModules').addEventListener('click', renderModules);
+
+function allLessons() {
+  const arr = [];
+  MODULES.forEach(m => m.lessons.forEach(l => arr.push({ ...l, module: m.title })));
+  return arr;
+}
+function navLesson(dir) {
+  const arr = allLessons();
+  const idx = arr.findIndex(l => l.id === (currentLesson && currentLesson.id));
+  const n = idx + dir;
+  if (n >= 0 && n < arr.length) openLesson(arr[n].id);
+}
+document.getElementById('prevLesson').addEventListener('click', () => navLesson(-1));
+document.getElementById('nextLesson').addEventListener('click', () => {
+  const d = store.done;
+  if (currentLesson && !d.includes(currentLesson.id)) { d.push(currentLesson.id); store.done = d; updateProgress(); }
+  navLesson(1);
+});
 document.getElementById('completeLesson').addEventListener('click', () => {
   if (!currentLesson) return;
   const d = store.done;

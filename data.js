@@ -101,6 +101,29 @@ const MODULES = [
     ]
   },
   {
+    id: "kripto",
+    icon: "🔐",
+    title: "Kriptografi Dasar",
+    desc: "Memahami enkripsi — cara data dilindungi.",
+    lessons: [
+      {
+        id: "krip-1",
+        title: "Hashing vs Enkripsi",
+        body: `<p><strong>Hashing</strong> (SHA-256, bcrypt): satu arah, tidak bisa dibalik. Dipakai untuk menyimpan password — server tidak pernah menyimpan password aslimu.</p><p><strong>Enkripsi</strong> (AES, RSA): dua arah dengan kunci. Simetris (satu kunci, mis. AES) vs asimetris (kunci publik/privat, mis. RSA).</p><p>Aturan: jangan pernah bikin algoritma kripto sendiri — pakai yang standar dan teruji.</p>`
+      },
+      {
+        id: "krip-2",
+        title: "HTTPS & TLS",
+        body: `<p>HTTPS = HTTP + TLS. Melindungi data antara browser dan server dari penyadapan (sniffing) dan modifikasi.</p><p>Sebagai ethical hacker: cek apakah situs memaksa HTTPS (HSTS), sertifikat valid, dan tidak ada mixed content. Tools: <code>curl -v</code>, SSL Labs.</p>`
+      },
+      {
+        id: "krip-3",
+        title: "Password Cracking (Teori)",
+        body: `<p>Serangan: dictionary attack (daftar password umum), brute force (coba semua kombinasi), rainbow table (hash precomputed).</p><p><strong>Pertahanan:</strong> bcrypt/argon2 dengan salt, password panjang, MFA. Pahami ini untuk mengaudit kekuatan password — hanya di lab (Hashcat dengan hash buatan sendiri).</p><p>⚠️ Jangan pernah crack password milik orang lain.</p>`
+      }
+    ]
+  },
+  {
     id: "karier",
     icon: "🚀",
     title: "Karier & Sertifikasi",
@@ -121,6 +144,34 @@ const MODULES = [
 ];
 
 const QUIZZES = [
+  {
+    id: "q-linux",
+    title: "Kuis: Linux",
+    questions: [
+      { q: "Perintah untuk mencari teks dalam file:", opts: ["find", "grep", "locate", "ps"], a: 1 },
+      { q: "Apa fungsi pipe (|)?", opts: ["Menghapus file", "Menyambung output ke input perintah lain", "Membuat direktori", "Mematikan proses"], a: 1 },
+      { q: "Perintah melihat proses berjalan:", opts: ["ls", "ps", "cd", "cat"], a: 1 },
+      { q: "chmod 755 artinya:", opts: ["Semua bisa tulis", "Owner full, lainnya baca+eksekusi", "Hanya owner bisa baca", "File terhapus"], a: 1 }
+    ]
+  },
+  {
+    id: "q-kripto",
+    title: "Kuis: Kriptografi",
+    questions: [
+      { q: "Perbedaan hashing dan enkripsi:", opts: ["Sama saja", "Hash satu arah, enkripsi dua arah dengan kunci", "Hash lebih lambat", "Enkripsi tidak aman"], a: 1 },
+      { q: "Algoritma yang tepat untuk menyimpan password:", opts: ["MD5", "SHA-1", "bcrypt/argon2", "Base64"], a: 2 },
+      { q: "HTTPS melindungi dari:", opts: ["Virus", "Penyadapan data di jaringan", "Spam", "Iklan"], a: 1 }
+    ]
+  },
+  {
+    id: "q-tools",
+    title: "Kuis: Tools & Metodologi",
+    questions: [
+      { q: "Tahap pertama dalam pentest:", opts: ["Exploitation", "Reconnaissance", "Reporting", "Scanning"], a: 1 },
+      { q: "Burp Suite digunakan untuk:", opts: ["Scan jaringan", "Intercept & uji aplikasi web", "Crack password", "Analisis malware"], a: 1 },
+      { q: "Nmap berfungsi untuk:", opts: ["Edit foto", "Network scanning", "Menulis laporan", "Chat"], a: 1 }
+    ]
+  },
   {
     id: "q-etika",
     title: "Kuis: Etika & Legalitas",

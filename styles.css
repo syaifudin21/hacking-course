@@ -116,3 +116,6 @@ footer p { color: var(--muted); font-size: 14px; }
   .lesson { padding: 24px; }
   .quiz-card { padding: 24px; }
 }
+
+.lesson-nav { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.lesson-nav .btn { flex: 1; min-width: 140px; text-align: center; }
