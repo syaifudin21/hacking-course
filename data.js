@@ -2,6 +2,7 @@
 const MODULES = [
   {
     id: "etika",
+    quiz: "q-etika",
     icon: "📜",
     title: "Etika & Legalitas",
     desc: "Fondasi wajib: apa yang boleh dan tidak boleh dilakukan.",
@@ -20,6 +21,7 @@ const MODULES = [
   },
   {
     id: "jaringan",
+    quiz: "q-jaringan",
     icon: "🌐",
     title: "Dasar Jaringan",
     desc: "Memahami cara komputer berkomunikasi — fondasi semua serangan & pertahanan.",
@@ -43,6 +45,7 @@ const MODULES = [
   },
   {
     id: "linux",
+    quiz: "q-linux",
     icon: "🐧",
     title: "Linux & Command Line",
     desc: "Senjata utama hacker: terminal.",
@@ -61,6 +64,7 @@ const MODULES = [
   },
   {
     id: "web",
+    quiz: "q-web",
     icon: "🕸️",
     title: "Web Security (OWASP Top 10)",
     desc: "Celah aplikasi web paling umum — teori + cara bertahan.",
@@ -84,6 +88,7 @@ const MODULES = [
   },
   {
     id: "tools",
+    quiz: "q-tools",
     icon: "🧰",
     title: "Tools & Metodologi",
     desc: "Alat standar industri dan alur kerja pentest.",
@@ -102,6 +107,7 @@ const MODULES = [
   },
   {
     id: "kripto",
+    quiz: "q-kripto",
     icon: "🔐",
     title: "Kriptografi Dasar",
     desc: "Memahami enkripsi — cara data dilindungi.",
@@ -125,6 +131,7 @@ const MODULES = [
   },
   {
     id: "karier",
+    quiz: "q-karier",
     icon: "🚀",
     title: "Karier & Sertifikasi",
     desc: "Dari belajar menjadi profesional dibayar.",
@@ -197,6 +204,15 @@ const QUIZZES = [
       { q: "Pertahanan utama terhadap SQL Injection:", opts: ["Sembunyikan URL", "Prepared statements", "Ganti nama tabel", "Blokir browser"], a: 1 },
       { q: "XSS memungkinkan penyerang…", opts: ["Mematikan server", "Menjalankan JavaScript di browser korban", "Mencuri kabel", "Menghapus DNS"], a: 1 },
       { q: "Celah #1 OWASP Top 10 (2021):", opts: ["XSS", "Broken Access Control", "SQL Injection", "CSRF"], a: 1 }
+    ]
+  },
+  {
+    id: "q-karier",
+    title: "Kuis: Karier",
+    questions: [
+      { q: "Platform untuk bug bounty legal:", opts: ["HackerOne", "Situs acak", "Forum gelap", "Email spam"], a: 0 },
+      { q: "Sertifikasi standar emas untuk pentest:", opts: ["CEH", "OSCP", "Security+", "eJPT"], a: 1 },
+      { q: "Yang membuat laporan bug bounty dibayar lebih baik:", opts: ["Banyak emoji", "Dokumentasi metodologi yang rapi", "Ancaman publikasi", "Template copy-paste"], a: 1 }
     ]
   }
 ];

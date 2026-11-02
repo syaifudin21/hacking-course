@@ -56,6 +56,7 @@ function renderModules() {
         <div><h3>${m.title}</h3><p>${m.desc}</p></div>
         <span class="module-pct">${doneCount}/${m.lessons.length}</span>
       </div>
+      <div class="module-quiz"><button class="btn btn-primary btn-sm" data-module-quiz="${m.quiz}">📝 Ikuti Kuis ${m.title}</button></div>
       <div class="lesson-links">${m.lessons.map(l =>
         `<button class="lesson-link ${store.done.includes(l.id) ? 'done' : ''}" data-lesson="${l.id}">${store.done.includes(l.id) ? '✓ ' : ''}${l.title}</button>`
       ).join('')}</div>
@@ -63,6 +64,13 @@ function renderModules() {
   }).join('');
   list.querySelectorAll('[data-lesson]').forEach(b =>
     b.addEventListener('click', () => openLesson(b.dataset.lesson)));
+  list.querySelectorAll('[data-module-quiz]').forEach(b =>
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.view').forEach(s => s.classList.remove('active'));
+      document.getElementById('view-quiz').classList.add('active');
+      window.scrollTo({ top: 0 });
+      startQuiz(b.dataset.moduleQuiz);
+    }));
 }
 
 function openLesson(id) {
