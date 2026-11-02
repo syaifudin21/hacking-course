@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhiteHat Academy — Belajar Ethical Hacking</title>
+<meta name="description" content="Platform pembelajaran ethical hacking: dari dasar hingga siap ikut bug bounty — dengan cara yang legal.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" data-view="home">🛡️ WhiteHat<span> Academy</span></a>
+    <div class="nav-links">
+      <a href="#" data-view="roadmap">Roadmap</a>
+      <a href="#" data-view="modules">Modul</a>
+      <a href="#" data-view="quiz">Kuis</a>
+      <a href="#" data-view="labs">Lab</a>
+    </div>
+    <div class="progress-mini"><div class="progress-bar"><div id="progressFill"></div></div><span id="progressText">0%</span></div>
+  </div>
+</nav>
+
+<main>
+<!-- ============ HOME ============ -->
+<section id="view-home" class="view active">
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">🎓 100% Legal & Etis</div>
+      <h1>Jadi <em>White Hat Hacker</em>,<br>dengan cara yang benar.</h1>
+      <p class="hero-sub">Pelajari keamanan siber dari nol: fondasi teknis, etika, dan praktik legal — sampai siap ikut bug bounty profesional.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary" data-view="roadmap">Mulai Belajar →</a>
+        <a href="#" class="btn btn-ghost" data-view="modules">Lihat Modul</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>Modul</span></div>
+        <div><strong>30+</strong><span>Materi</span></div>
+        <div><strong>5</strong><span>Kuis</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="principles">
+    <div class="container">
+      <h2>Tiga prinsip white hat hacker</h2>
+      <div class="cards">
+        <div class="card"><div class="card-icon">📜</div><h3>Izin Tertulis</h3><p>Tidak pernah menguji sistem tanpa izin eksplisit dari pemiliknya. Ini pembeda utama legal vs ilegal.</p></div>
+        <div class="card"><div class="card-icon">🎯</div><h3>Batasan Jelas</h3><p>Patuhi scope: hanya sistem yang diizinkan, dengan metode yang disepakati.</p></div>
+        <div class="card"><div class="card-icon">📝</div><h3>Lapor, Bukan Rusak</h3><p>Temuan dilaporkan secara bertanggung jawab (responsible disclosure), bukan dieksploitasi.</p></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section id="view-roadmap" class="view">
+  <div class="container">
+    <p class="eyebrow">Roadmap</p>
+    <h2>Jalur belajar 6 tahap</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ============ MODULES ============ -->
+<section id="view-modules" class="view">
+  <div class="container">
+    <p class="eyebrow">Modul</p>
+    <h2>Materi pembelajaran</h2>
+    <div class="module-list" id="moduleList"></div>
+    <article class="lesson" id="lessonView" hidden>
+      <button class="btn btn-ghost btn-sm" id="backToModules">← Kembali</button>
+      <div id="lessonContent"></div>
+      <button class="btn btn-primary" id="completeLesson">Tandai Selesai ✓</button>
+    </article>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="view-quiz" class="view">
+  <div class="container">
+    <p class="eyebrow">Kuis</p>
+    <h2>Uji pemahamanmu</h2>
+    <div id="quizList" class="quiz-list"></div>
+    <div id="quizPlay" hidden>
+      <button class="btn btn-ghost btn-sm" id="backToQuiz">← Kembali</button>
+      <div class="quiz-card">
+        <p class="quiz-progress" id="quizProgress"></p>
+        <h3 id="quizQuestion"></h3>
+        <div id="quizOptions"></div>
+        <p id="quizFeedback"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LABS ============ -->
+<section id="view-labs" class="view">
+  <div class="container">
+    <p class="eyebrow">Lab Praktik Legal</p>
+    <h2>Latihan di tempat yang memang untuk diretas</h2>
+    <p class="section-sub">Platform berikut menyediakan lingkungan legal untuk melatih skill — jangan pernah latihan di situs asli tanpa izin.</p>
+    <div class="cards">
+      <div class="card"><div class="card-icon">🎯</div><h3>TryHackMe</h3><p>Learning path terstruktur dari nol, dengan mesin virtual di browser. Mulai dari "Pre Security".</p><a href="https://tryhackme.com" target="_blank" rel="noopener">Kunjungi →</a></div>
+      <div class="card"><div class="card-icon">📦</div><h3>HackTheBox</h3><p>Lab dan CTF untuk level menengah-lanjut. Standar industri untuk latihan pentest.</p><a href="https://hackthebox.com" target="_blank" rel="noopener">Kunjungi →</a></div>
+      <div class="card"><div class="card-icon">🌐</div><h3>PortSwigger Academy</h3><p>Materi web security gratis terbaik — lab interaktif untuk setiap jenis celah OWASP.</p><a href="https://portswigger.net/web-security" target="_blank" rel="noopener">Kunjungi →</a></div>
+      <div class="card"><div class="card-icon">💰</div><h3>HackerOne / Bugcrowd</h3><p>Platform bug bounty: cari celah di perusahaan yang <em>membuka</em> programnya, dibayar per temuan.</p><a href="https://hackerone.com" target="_blank" rel="noopener">Kunjungi →</a></div>
+      <div class="card"><div class="card-icon">🏠</div><h3>DVWA / Metasploitable</h3><p>Aplikasi & VM yang sengaja dibuat rentan — install lokal untuk latihan offline.</p><a href="https://dvwa.co.uk" target="_blank" rel="noopener">Kunjungi →</a></div>
+      <div class="card"><div class="card-icon">⚖️</div><h3>OWASP</h3><p>Standar keamanan aplikasi web: OWASP Top 10, testing guide, dan cheat sheet.</p><a href="https://owasp.org" target="_blank" rel="noopener">Kunjungi →</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container"><p>🛡️ WhiteHat Academy — Belajar hacking dengan cara yang legal & etis.</p></div></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
