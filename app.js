@@ -117,7 +117,10 @@ document.getElementById('completeLesson').addEventListener('click', () => {
 
 // ===== QUIZ =====
 let quizState = null;
+let quizGen = 0;
 function renderQuizList() {
+  quizGen++;
+  quizState = null;
   document.getElementById('quizPlay').hidden = true;
   const el = document.getElementById('quizList');
   el.innerHTML = QUIZZES.map(q => {
@@ -132,7 +135,9 @@ function renderQuizList() {
 }
 function startQuiz(id) {
   const q = QUIZZES.find(x => x.id === id);
-  quizState = { q, i: 0, correct: 0 };
+  if (!q) return;
+  quizGen++;
+  quizState = { q, i: 0, correct: 0, gen: quizGen };
   document.getElementById('quizList').innerHTML = '';
   document.getElementById('quizPlay').hidden = false;
   showQuestion();
@@ -170,7 +175,9 @@ function answer(idx, btn) {
     fb.textContent = '❌ Kurang tepat.';
     fb.className = 'bad';
   }
+  const gen = quizState.gen;
   setTimeout(() => {
+    if (!quizState || quizState.gen !== gen) return;
     quizState.i++;
     if (quizState.i < q.questions.length) showQuestion();
     else finishQuiz();
